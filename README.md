@@ -1,3 +1,83 @@
+
+# ETL Project: Modern Data Transformation and Loading with DBT, Snowflake, and Airflow
+
+## Project Description
+
+In the past, due to the high cost of cloud storage, data was transformed before being loaded. With the decrease in storage costs, we now load data first and transform it as needed. This project demonstrates how to build fact tables and data marts, manage Snowflake Role-Based Access Control (RBAC), and deploy models on Airflow.
+
+## Objectives
+- Building fact tables
+- Creating data marts
+- Managing Snowflake RBAC
+- Deploying models on Airflow
+
+## Tools Used
+- **DBT**: Data transformation
+- **Snowflake**: Data warehousing
+- **Airflow**: Orchestration
+- **Docker**
+- **Python**
+
+## Dataset
+- **Snowflake TPCH**: A free dataset provided by Snowflake.
+
+## Steps
+
+### Step 1: Setup Snowflake Environment
+Configure and prepare your Snowflake environment for data warehousing.
+
+### Step 2: Configure `dbt_profile.yml`
+Set up your DBT profile to connect to the Snowflake environment.
+
+### Step 3: Create Source and Staging Files
+Define your source data and staging tables.
+
+### Step 4: Macros
+Create reusable SQL snippets using DBT macros.
+
+### Step 5: Transform Models
+Develop transformation models to build fact tables and data marts.
+
+### Step 6: Generic and Singular Tests
+Implement data quality tests to validate your models.
+
+### Step 7: Deploy on Airflow
+Deploy your DBT models using Airflow for orchestration.
+
+## Notes
+
+### Project Structure
+- **`dbt.yml`**: This file designates the main project folder and contains information about models, tests, seeds, macros, etc.
+- **`DBT_project.yml`**: Specifies where DBT should look for the models.
+- **Models Folder**: Contains SQL logic, source datasets, and staging files. It's a good practice to separate staging files using marts folders.
+- **Seeds Folder**: For static files that don't change often.
+- **Snapshots Folder**: Useful for creating incremental models.
+
+### Tables to Create
+- **Staging**: Materialized as a view.
+- **Marts**: Materialized as a table.
+
+### Additional Notes
+- Install third-party libraries for creating surrogate keys, which are useful in dimensional modeling to connect fact and dimensional tables.
+- Staging tables should have a 1-to-1 relationship with source tables.
+- Perform necessary transformations on staging tables based on requirements.
+- Aggregate data in `line_items` to create fact tables, which store results from business processes.
+
+### Types of Tests
+- **Singular Data Test**
+- **Generic Data Test**
+
+Refer to the DBT documentation for more details on these tests.
+
+## References
+- [DBT Core](https://pypi.org/project/dbt-core/)
+- [DBT Profiles Configuration](https://docs.getdbt.com/docs/core/connect-data-platform/profiles.yml)
+- [Fact Table Structure](https://www.kimballgroup.com/data-warehouse-business-intelligence-resources/kimball-techniques/dimensional-modeling-techniques/fact-table-structure/)
+- [DBT Jinja Macros](https://docs.getdbt.com/docs/build/jinja-macros)
+- [Astronomer Cosmos](https://github.com/astronomer/astronomer-cosmos)
+
+---
+
 Overview
 ========
 

@@ -1,5 +1,5 @@
 
-# ETL Project: Modern Data Transformation and Loading with DBT, Snowflake, and Airflow
+# ELT Project: Modern Data Transformation and Loading with DBT, Snowflake, and Airflow
 
 ## Project Description
 
